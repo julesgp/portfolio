@@ -4,21 +4,23 @@
 	<meta charset="UTF-8">
 	<title>Jules Garcia</title>
 	<link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
-	<link href="/public/style.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="./public/style.css" rel="stylesheet"/>
 </head>
 <body>
-	<header>
+	<header id="home">
 		<div class="fixedHeader">
 			<div class="headerImage">
-				<img src="assets/jlogo.png" class="logoHeader"> <!-- logo-->
+				<img src="./assets/jlogo.png" class="logoHeader"> <!-- logo-->
 			</div>
 
 			<nav>
 				<ul class="navbar">
-					<li><a href="#">Contact</a></li>
-					<li><a href="#">Work</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#">Home</a></li>
+					<li id ="contactButton"><a href="#contact">Contact</a></li>
+					<li id="workButton"><a href="#work">Work</a></li>
+					<li id="aboutButton"><a href="#about">About</a></li>
+					<li id="homeButton"><a href="#home" class="active">Home</a></li>
 				</ul>
 			</nav>
 		</div>	
@@ -27,7 +29,7 @@
 	<section class="home"> <!-- Home -->
 		
 		<div class="squareOne">
-			<img src="assets/face.jpg" class="homeMe">
+			<!-- <img src="assets/face.jpg" class="homeMe"> -->
 		</div>
 
 		<div class="squareTwo">
@@ -38,30 +40,190 @@
 		</div>
 
 		<div class="squareThree">
-			
+			<div class="icons">
+				<a href="#"><i class="fa fa-github homeIcon" aria-hidden="true"></i></a>
+				<a href="#"><i class="fa fa-twitter homeIcon" aria-hidden="true"></i></a>
+				<a href="#"><i class="fa fa-linkedin homeIcon" aria-hidden="true"></i></a>
+				<a href="mailto:jugar28@gmail.com"><i class="fa fa-envelope homeIcon" aria-hidden="true"></i>	</a>	
+			</div>		
 		</div>
-
+		
 		<div class="squareFour">
-			
+			<div class="intro">
+				<p>Hi, welcome to my website!</p>
+				<p>Find more information about me,</p>
+				<p>and my work below.</p>
+			</div>
+		</div>
+	</section> <!-- End of Home -->
+	<span id="about"></span>
+	<section class="about"> <!-- about -->
+		<div class="aboutOne">
+			<div class="aboutMe">
+				<h2>Hello!</h2>
+				<div class="meInfo">
+					<p>I'm Jules and I am a Web Developer based in Toronto. My passion for programming started at the University of Toronto when I took the introductory course to computer science. Since then, I have not been able to keep myself away from coding - except for the weekends.  </p>
+				</div>
+			</div>
 		</div>
 
-	</section>
-	
-	<section class="about" id="about"> <!-- about -->
+		<div class="aboutTwo">
+			<div class="skills">
+				<div class="aboutEducation">
+					<div class="eduTitle">
+						<h3>EDUCATION</h3>
+					</div>
+					<div class="eduInfo">
+						<h4>@UniversityofToronto</h4>
+						<p>#politicalScience #german #envStudies #compSci</p>
+						<h4 id ="hackerYou">@HackerYou</h4>
+						<p>#webdevelopmentBootcamp</p>
+						<h4>@GeorgeBrownCollege</h4>
+						<p>#foundationsPHP</p>
+					</div>
+				</div>
+				<div class="aboutSkills">
+					<div class="skillsTitle">
+						<h3>SKILLS / TOOLS</h3>
+					</div>
+					<div class="skillsInfo">
+						<p>#Javascript #ES6 #jquery #CSS #PHP #python #bootstrap #Sass #responsiveDesign
+						 #HTML5 #git #gulp #terminal #sublimeText #Atom #firebase #APIs #react</p>
+					</div>
+					
+				</div>
+			</div>
+		</div>
 
 		
-	</section>
+	</section> <!-- End of About -->
 
-	<section> <!-- work -->
-		
-	</section>
+	<section class="projects" id="work"> <!-- work -->
+		<div class="mainProject">
+			<div class="projectOne">
+				<div class="projectOneImage">
+					<img src="assets/clicktail.png" class="imageOne">
+				</div>
 
-	<section> <!-- contact -->
-		
+				<div class="projectDescription">
+					<div class="githubSpace">
+						<a href="#"><i class="fa fa-github iconProject" aria-hidden="true"></i></a>
+					</div>
+
+					<div class="descriptionInfo">
+						<a href="www.julescode.com/clicktail"><h3>Clicktail</h3></a>
+						<p>#javascript #APIyummly #flexbox #jquery</p>
+					</div>
+				</div>
+			</div> <!-- End of ProjectOne -->
+
+			<div class="projectOne">
+				<div class="projectOneImage">
+					<img src="assets/clicktail.png" class="imageOne">
+				</div>
+
+				<div class="projectDescription">
+					<div class="githubSpace">
+						<a href="#"><i class="fa fa-github iconProject" aria-hidden="true"></i></a>
+					</div>
+
+					<div class="descriptionInfo">
+						<a href="www.julescode.com/clicktail"><h3>Clicktail</h3></a>
+						<p>#javascript #APIyummly #flexbox #jquery</p>
+					</div>
+				</div>
+			</div> <!-- End of ProjectOne -->
+		</div> <!-- End of MainProject -->
+
+		<div class="moreProjects">
+			<div class="projectOne">
+				<div class="projectOneImage">
+					<img src="assets/passaimg.png" class="imageOne">
+				</div>
+
+				<div class="projectDescription">
+					<div class="githubSpace">
+						<a href="#"><i class="fa fa-github iconProject" aria-hidden="true"></i></a>
+					</div>
+
+					<div class="descriptionInfo yellow">
+						<a href="www.julescode.com/clicktail"><h3>Passahero</h3></a>
+						<p>#javascript #APIyummly #flexbox #jquery</p>
+					</div>
+				</div>
+			</div> <!-- End of ProjectOne -->
+
+			<div class="projectOne">
+				<div class="projectOneImage">
+					<img src="assets/bakery.png" class="imageOne">
+				</div>
+
+				<div class="projectDescription">
+					<div class="githubSpace">
+						<a href="#"><i class="fa fa-github iconProject" aria-hidden="true"></i></a>
+					</div>
+
+					<div class="descriptionInfo yellow">
+						<a href="www.julescode.com/clicktail"><h3>Clicktail</h3></a>
+						<p>#javascript #APIyummly #flexbox #jquery</p>
+					</div>
+				</div>
+			</div> <!-- End of ProjectOne -->
+		</div> <!-- End of MoreProjects-->
+	</section> <!-- End of Projects -->
+
+	<section class="contact" id="contact"> <!-- contact -->
+		<div class="contactTitle">
+			<h2>CONTACT</h2>
+			<p>Let's get this started!</p>
+		</div>
+
+		<div class="contactInfo">
+			<div class="address">
+				<i class="fa fa-map addressIcon" aria-hidden="true"></i>
+				<p>Toronto, ON, Canada</p>
+				
+			</div>
+
+			<div class="telephone">
+				<i class="fa fa-mobile phoneIcon" aria-hidden="true"></i>
+				<p>Cell: 647-828-1935</p>
+				
+			</div>
+
+			<div class="email">
+				<i class="fa fa-envelope emailIcon" aria-hidden="true"></i>
+				<p>jugar28@gmail.com</p>
+				
+			</div>
+		</div>	
 	</section>
 	
 	<footer>
-		
+		<p class="designed">&copy; Jules Garcia Perdomo 2017</p>
 	</footer>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>    
+	<script>
+	$(function() {
+	    $('a[href*="#"]:not([href="#"])').click(function() {
+	        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		        var target = $(this.hash);
+		            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		        if (target.length) {
+		            $('html, body').animate({
+		             scrollTop: target.offset().top
+		            }, 1000);
+		            return false;
+			        }
+		        }
+	        });
+	    });
+
+	$('#contactButton').on('click', function(){
+		this.toggleClass("active");
+	});
+
+	</script>
 </body>
 </html>

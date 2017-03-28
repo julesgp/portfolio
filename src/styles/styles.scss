@@ -1,6 +1,14 @@
 article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
 input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
 
+.clearfix:after {
+   content: " ";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
 // M I X I N S 
 
 @mixin flex($direction){
@@ -26,19 +34,22 @@ body{
 	background-color: $gray;
 }
 
+.active{
+	color:$red !important;
+}
+
 // H E A D E R
 
 header{
-	padding-bottom:100px;
+	padding-bottom:70px;
 }
 
 .fixedHeader{
 	@include flex(row);
 	align-items:center;
 	background-color:$white;
-	width:100%;
-	margin-bottom:100px;
 	position:fixed;
+	width:100%;
 }
 
 .headerImage{
@@ -46,9 +57,11 @@ header{
 }
 
 .logoHeader{
-	height:100px;
-	width:150px;
 	margin-left:50px;
+	background-image: url("../../assets/jlogo.png");
+	height:70px;
+	width:110px;
+	
 }
 
 nav{
@@ -72,14 +85,53 @@ nav{
 	}
 	a{
 		text-decoration: none;
+		outline:none;
 		color:$black;
-		padding:15px;
-		border:2px solid $gray;
+		padding:10px 15px;
+		font-size:18px;
+		// border-bottom:2px solid $black;
 		&:hover{
-			color:$black;
-			background-color:$gray;
+			color:$lightYellow;
 		}
 	}
+}
+
+/* Portrait tablet and small desktops */
+@media (max-width: 1150px) {
+	nav{
+		width:70%;
+	}
+
+	.navbar{
+		padding:0;
+		li{
+			margin:0 0 10px 0;
+		}
+	}
+
+	.headerImage{
+		width:30%;
+	}
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 500px) {
+	nav{
+		width:80%;
+	}
+	.headerImage{
+		@include flex(row);
+		justify-content:center;
+		width:20%;
+	}
+
+}
+
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
 }
 
 // H O M E 
@@ -88,23 +140,30 @@ nav{
 	@include flex(row);
 	flex-wrap:wrap;
 	width:100%;
-	position:static;
 }
 
 .squareOne, .squareTwo, .squareThree, .squareFour{
 	width:50%;
-	height:250px;
+}
+
+.squareOne, .squareTwo{
+	height:360px;
 }
 
 .squareOne{
-	@include flex(row);
-	justify-content:left;
+	background-image:url('../../assets/faceimg.jpg');
+	background-size:cover;
+	background-repeat: no-repeat;
+	background-position:center;
+}
 
+.squareThree, .squareFour{
+	height:205px;
 }
 
 .homeMe{
-	height:250px;
-	width:380px;
+	height:280px;
+	width:430px;
 }
 
 .squareTwo{
@@ -118,14 +177,15 @@ nav{
 }
 
 .homeName{
-	width:400px;
+	width:60%;
 	margin:0 auto;
 	h1{
 		color:$black;
 		padding:20px;
 		font-family: $fontTitle;
-		background-color:$gray;
+		background-color:$white;
 		margin:0;
+		box-sizing:border-box;
 	}
 	h3{
 		color:$black;
@@ -134,10 +194,553 @@ nav{
 	}
 }
 
+.squareThree{
+	display:flex;
+	align-items:center;
+}
+
+.icons{
+	width:70%;
+	@include flex(row);
+	align-items:center;
+	margin:0 auto;
+	a{
+		text-decoration:none;
+		color:$black;
+		width:25%;
+		&:hover{
+			color:$gray;
+		}
+	}
+}
+
+.homeIcon{
+	font-size:45px;
+	text-decoration: none;
+}
+
+.squareFour{
+	@include flex(colum);
+	align-items:center;
+	justify-content:center;
+}
+
+.intro{
+	@include flex(column);
+	margin:0 auto;
+	width:60%;
+	p{
+		font-size:20px;
+		color:$black;
+		font-family: $fontMain;
+		margin:0 0 20px 0;
+	}
+}
+
+/* Portrait tablet and small desktops */
+@media (max-width: 1024px) {
+	.intro{
+		width:80%;
+	}
+
+	.homeName{
+		width:80%;
+	}
+}
+
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+	.icons{
+		width:90%;
+		a{
+			width:25%;
+			text-align:center;
+		}
+	}
+
+	.homeIcon{
+		font-size:40px;
+		margin:0 auto;
+	}
+
+	.intro{
+		width:90%;
+	}
+
+	.homeName{
+		width:90%;
+	}
+
+}
+
+@media (max-width: 700px) {
+	.squareOne, .squareTwo, .squareThree, .squareFour{
+		width:100%;
+	}
+
+	.squareTwo{
+		height:200px;
+		text-align:center;
+	}
+
+	.squareThree{
+		height:100px;
+	}
+
+	.squareFour{
+		height:200px;
+	}
+
+	.homeName{
+		width:70%;
+		margin:0 auto;
+		h1{
+			color:$black;
+			padding:10px;
+			font-family: $fontTitle;
+			background-color:$white;
+			margin:0;
+			box-sizing:border-box;
+		}
+		h3{
+			color:$black;
+			font-family: $fontMain;
+			margin:10px 0 0 0;
+		}
+	}
+
+	.intro{
+		@include flex(column);
+		margin:0 auto;
+		width:70%;
+		text-align:center;
+		p{
+			font-size:20px;
+			color:$black;
+			font-family: $fontMain;
+			margin:0 0 20px 0;
+		}
+	}
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.homeName{
+		width:80%;
+	}
+
+	.intro{
+		width:90%;
+	}
+
+}
+
 // A B O U T 
 
 .about{
-	height:500px;
+	@include flex(row);
+	box-sizing:border-box;
+}
+
+#about{
+	visibility:hidden;
+}
+
+.aboutOne{
+	@include flex(column);
+	justify-content:center;
+	width:50%;
+	background-color:$gray;
+}
+
+.aboutMe{
+	@include flex(column);
+	width:80%;
+	margin:100px auto 100px auto;
+	justify-content:left;
+	h2{
+		padding:10px;
+		background-color:white;
+		color:$black;
+		font-family: $fontTitle;
+		margin:0;
+		letter-spacing:5px;
+	}
+	p{
+		line-height: 30px;
+	}
+}
+
+.meInfo{
+	background-color:$lightYellow;
+	font-family: $fontMain;
+	padding:20px;
+}
+
+.aboutTwo{
+	width:50%;
+	background-color:$lightYellow;
+	padding-top:50px;
+}
+
+.skills{
+	@include flex(column);
+	width:80%;
+	margin:50px auto;
+}
+
+.aboutEducation{
+	h3{
+		color:$white;
+		letter-spacing: 5px;
+		font-family: $fontTitle;
+		margin:0 0 15px 0;
+	}
+}
+
+.eduInfo{
+	background-color: $gray;
+	padding:20px 30px;
+	box-sizing:border-box;
+	h4{
+		margin:0;
+	}
+	p{
+		margin:5px 0 20px 0;
+		padding-left:20px;
+		font-family: $fontMain;
+	}
+}
+
+.skillsTitle{
+	h3{
+		color:$white;
+		letter-spacing: 5px;
+		font-family: $fontTitle;
+		margin:20px 0 15px 0;
+	}
+}
+
+#hackerYou{
+	color:$red;
+}
+
+.skillsInfo{
+	background-color: $gray;
+	font-family:$fontMain;
+	padding:20px 30px;
+	font-size:20px;
+	p{
+		line-height: 30px;
+	}
+}
+
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+	.about{
+		@include flex(column);
+	}
+
+	.aboutOne{
+		width:100%;
+		background-color:white;
+		h2{
+			background-color: $gray;
+		}
+	}
+
+	.aboutTwo{
+		width:100%;
+	}
+
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+}
+
+// W O R K 
+
+.projects{
+	@include flex(row);
+}
+
+.mainProject{
+	@include flex(column);
+	width:50%;
+	background-color:$lightYellow;
+	padding-top:70px;
+}
+
+.projectOneImage{
+	height:250px;
+	box-sizing:border-box;
+}
+
+.projectOne{
+	@include flex(column);
+	justify-content:space-between;
+	width:70%;
+	margin:100px auto 100px auto;
+}
+
+.imageOne{
 	width:100%;
-	background-color:$black;
+	height:100%;
+	border:10px solid $black;
+	box-sizing:border-box;
+}
+
+.projectDescription{
+	@include flex(row);
+	align-items:center;
+	justify-content:space-between;
+	width:100%;
+	height:80px;
+	margin-top:35px;
+}
+
+.githubSpace{
+	width:20%;
+	height:100%;
+	background-color: $red;
+	font-size:50px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	a{
+		color:$gray;
+	}
+}
+
+.descriptionInfo{
+	@include flex(column);
+	width:80%;
+	background-color:$gray;
+	height:100%;
+	a{
+		text-decoration:none;
+	}
+	h3{
+		margin:0;
+		color:$black;
+		width:100%;
+		padding:15px 0 0 10px;
+		font-family: $fontTitle;
+		box-sizing:border-box;
+	}
+	p{
+		font-family: $fontMain;
+		margin:5px 0 0 0;
+		padding-left:10px;
+	}
+}
+
+.moreProjects{
+	@include flex(column);
+	width:50%;
+	background-color:$gray;
+	padding-top:70px;
+
+}
+
+.yellow{
+	background-color: $lightYellow;
+}
+
+/* Portrait tablet and small desktops */
+@media (max-width: 1024px) {
+	.projectOne{
+		width:85%;
+	}
+}
+
+@media (max-width: 920px) {
+	.projectOne{
+		width:90%;
+	}
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+	.projects{
+		@include flex(column);
+	}
+
+	.projectOne{
+		width:70%;
+		margin-bottom:0;
+	}
+
+	.mainProject{
+		width:100%;
+		background-color:$gray;
+		padding-top:30px;
+		padding-bottom:70px;
+		box-sizing:border-box;
+	}
+
+	.moreProjects{
+		width:100%;
+		background-color:$lightYellow;
+		padding-top:30px;
+		padding-bottom:70px;
+		box-sizing:border-box;
+	}
+
+	.descriptionInfo{
+		background-color:$lightYellow;
+	}
+
+	.yellow{
+		background-color:$gray;
+	}
+
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.projectOne{
+		width:90%;
+	}
+
+	.moreProjects{
+		padding-top:0;
+	}
+}
+
+// C O N T A C T
+
+.contact{
+	background-color: $red;
+}
+
+.contactTitle{
+	width:40%;
+	margin:0 auto;
+	text-align:center;
+	box-sizing:border-box;
+	padding-top:100px;
+	padding-bottom:50px;
+	h2{
+		font-family: $fontTitle;
+		width:200px;
+		margin:0 auto;
+		font-size: 40px;
+		letter-spacing: 5px;
+	}
+	p{
+		font-family: $fontMain;
+		padding-left:20px;
+	}
+}
+
+.contactInfo{
+	@include flex(row);
+	width:65%;
+	margin:0 auto;
+	padding-bottom:110px;
+	p{
+		font-family: $fontMain;
+		font-size:20px;
+	}
+}
+
+.address, .telephone, .email{
+	width:33.33%;
+	box-sizing:box-border;
+	@include flex(column);
+	align-items:flex-end;
+	justify-content:center;
+	text-align:center;
+	p{
+		margin:15px auto 0 auto;
+	}
+}
+
+.addressIcon{
+	font-size:60px;
+	margin:0 auto;
+}
+
+.phoneIcon{
+	font-size:65px;
+	margin:0 auto;
+}
+
+.emailIcon{
+	font-size:60px;
+	margin:0 auto;
+}
+
+@media (max-width: 1024px) {
+	.contactInfo{
+		width:80%;
+	}
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+	.contactInfo{
+		width:90%;
+	}
+}
+
+@media (max-width: 768px) {
+	.contactInfo{
+		width:90%;
+	}
+}
+
+@media (max-width: 650px) {
+	.contactInfo{
+		@include flex(column);
+		width:65%;
+		margin:0 auto;
+		padding-bottom:110px;
+		p{
+			font-family: $fontMain;
+			font-size:20px;
+		}
+	}
+
+	.address, .telephone, .email{
+		width:80%;
+		margin:0 auto 40px auto;
+	}
+
+	.addressIcon{
+		font-size:80px;
+	}
+
+	.phoneIcon{
+		font-size:85px;
+	}
+
+	.emailIcon{
+		font-size:80px;
+	}
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+}
+
+//F O T T E R 
+
+footer{
+	background-color: $gray;
+	text-align:right;
+	p{
+		margin:0;
+		padding:30px 20px 30px 0;
+	}
 }

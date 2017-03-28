@@ -117,11 +117,21 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
+.clearfix:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both; }
+
 body {
   background-color: #f2f2f2; }
 
+.active {
+  color: #d9523e !important; }
+
 header {
-  padding-bottom: 100px; }
+  padding-bottom: 70px; }
 
 .fixedHeader {
   display: -ms-flexbox;
@@ -131,17 +141,17 @@ header {
   -ms-flex-align: center;
       align-items: center;
   background-color: white;
-  width: 100%;
-  margin-bottom: 100px;
-  position: fixed; }
+  position: fixed;
+  width: 100%; }
 
 .headerImage {
   width: 50%; }
 
 .logoHeader {
-  height: 100px;
-  width: 150px;
-  margin-left: 50px; }
+  margin-left: 50px;
+  background-image: url("../../assets/jlogo.png");
+  height: 70px;
+  width: 110px; }
 
 nav {
   width: 50%; }
@@ -162,13 +172,38 @@ nav {
     width: 25%; }
   .navbar a {
     text-decoration: none;
+    outline: none;
     color: black;
-    padding: 15px;
-    border: 2px solid #f2f2f2; }
+    padding: 10px 15px;
+    font-size: 18px; }
     .navbar a:hover {
-      color: black;
-      background-color: #f2f2f2; }
+      color: #ffd180; }
 
+/* Portrait tablet and small desktops */
+@media (max-width: 1150px) {
+  nav {
+    width: 70%; }
+  .navbar {
+    padding: 0; }
+    .navbar li {
+      margin: 0 0 10px 0; }
+  .headerImage {
+    width: 30%; } }
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 500px) {
+  nav {
+    width: 80%; }
+  .headerImage {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-pack: center;
+        justify-content: center;
+    width: 20%; } }
+
+/* Landscape phones and down */
 .home {
   display: -ms-flexbox;
   display: flex;
@@ -176,24 +211,26 @@ nav {
       flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 100%;
-  position: static; }
+  width: 100%; }
 
 .squareOne, .squareTwo, .squareThree, .squareFour {
-  width: 50%;
-  height: 250px; }
+  width: 50%; }
+
+.squareOne, .squareTwo {
+  height: 360px; }
 
 .squareOne {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  -ms-flex-pack: left;
-      justify-content: left; }
+  background-image: url("../../assets/faceimg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.squareThree, .squareFour {
+  height: 205px; }
 
 .homeMe {
-  height: 250px;
-  width: 380px; }
+  height: 280px;
+  width: 430px; }
 
 .squareTwo {
   display: -ms-flexbox;
@@ -208,20 +245,481 @@ nav {
   background-color: #d9523e; }
 
 .homeName {
-  width: 400px;
+  width: 60%;
   margin: 0 auto; }
   .homeName h1 {
     color: black;
     padding: 20px;
     font-family: "Montserrat", sans-serif;
-    background-color: #f2f2f2;
-    margin: 0; }
+    background-color: white;
+    margin: 0;
+    box-sizing: border-box; }
   .homeName h3 {
     color: black;
     font-family: "Inconsolata", monospace;
     margin: 10px 0 0 0; }
 
+.squareThree {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center; }
+
+.icons {
+  width: 70%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-align: center;
+      align-items: center;
+  margin: 0 auto; }
+  .icons a {
+    text-decoration: none;
+    color: black;
+    width: 25%; }
+    .icons a:hover {
+      color: #f2f2f2; }
+
+.homeIcon {
+  font-size: 45px;
+  text-decoration: none; }
+
+.squareFour {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: colum;
+      flex-direction: colum;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+.intro {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  margin: 0 auto;
+  width: 60%; }
+  .intro p {
+    font-size: 20px;
+    color: black;
+    font-family: "Inconsolata", monospace;
+    margin: 0 0 20px 0; }
+
+/* Portrait tablet and small desktops */
+@media (max-width: 1024px) {
+  .intro {
+    width: 80%; }
+  .homeName {
+    width: 80%; } }
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+  .icons {
+    width: 90%; }
+    .icons a {
+      width: 25%;
+      text-align: center; }
+  .homeIcon {
+    font-size: 40px;
+    margin: 0 auto; }
+  .intro {
+    width: 90%; }
+  .homeName {
+    width: 90%; } }
+
+@media (max-width: 700px) {
+  .squareOne, .squareTwo, .squareThree, .squareFour {
+    width: 100%; }
+  .squareTwo {
+    height: 200px;
+    text-align: center; }
+  .squareThree {
+    height: 100px; }
+  .squareFour {
+    height: 200px; }
+  .homeName {
+    width: 70%;
+    margin: 0 auto; }
+    .homeName h1 {
+      color: black;
+      padding: 10px;
+      font-family: "Montserrat", sans-serif;
+      background-color: white;
+      margin: 0;
+      box-sizing: border-box; }
+    .homeName h3 {
+      color: black;
+      font-family: "Inconsolata", monospace;
+      margin: 10px 0 0 0; }
+  .intro {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    margin: 0 auto;
+    width: 70%;
+    text-align: center; }
+    .intro p {
+      font-size: 20px;
+      color: black;
+      font-family: "Inconsolata", monospace;
+      margin: 0 0 20px 0; } }
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .homeName {
+    width: 80%; }
+  .intro {
+    width: 90%; } }
+
 .about {
-  height: 500px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  box-sizing: border-box; }
+
+#about {
+  visibility: hidden; }
+
+.aboutOne {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  width: 50%;
+  background-color: #f2f2f2; }
+
+.aboutMe {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  width: 80%;
+  margin: 100px auto 100px auto;
+  -ms-flex-pack: left;
+      justify-content: left; }
+  .aboutMe h2 {
+    padding: 10px;
+    background-color: white;
+    color: black;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    letter-spacing: 5px; }
+  .aboutMe p {
+    line-height: 30px; }
+
+.meInfo {
+  background-color: #ffd180;
+  font-family: "Inconsolata", monospace;
+  padding: 20px; }
+
+.aboutTwo {
+  width: 50%;
+  background-color: #ffd180;
+  padding-top: 50px; }
+
+.skills {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  width: 80%;
+  margin: 50px auto; }
+
+.aboutEducation h3 {
+  color: white;
+  letter-spacing: 5px;
+  font-family: "Montserrat", sans-serif;
+  margin: 0 0 15px 0; }
+
+.eduInfo {
+  background-color: #f2f2f2;
+  padding: 20px 30px;
+  box-sizing: border-box; }
+  .eduInfo h4 {
+    margin: 0; }
+  .eduInfo p {
+    margin: 5px 0 20px 0;
+    padding-left: 20px;
+    font-family: "Inconsolata", monospace; }
+
+.skillsTitle h3 {
+  color: white;
+  letter-spacing: 5px;
+  font-family: "Montserrat", sans-serif;
+  margin: 20px 0 15px 0; }
+
+#hackerYou {
+  color: #d9523e; }
+
+.skillsInfo {
+  background-color: #f2f2f2;
+  font-family: "Inconsolata", monospace;
+  padding: 20px 30px;
+  font-size: 20px; }
+  .skillsInfo p {
+    line-height: 30px; }
+
+/* Portrait tablet and small desktops */
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+  .about {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column; }
+  .aboutOne {
+    width: 100%;
+    background-color: white; }
+    .aboutOne h2 {
+      background-color: #f2f2f2; }
+  .aboutTwo {
+    width: 100%; } }
+
+/* Landscape phones and down */
+.projects {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row; }
+
+.mainProject {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  width: 50%;
+  background-color: #ffd180;
+  padding-top: 70px; }
+
+.projectOneImage {
+  height: 250px;
+  box-sizing: border-box; }
+
+.projectOne {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  width: 70%;
+  margin: 100px auto 100px auto; }
+
+.imageOne {
   width: 100%;
-  background-color: black; }
+  height: 100%;
+  border: 10px solid black;
+  box-sizing: border-box; }
+
+.projectDescription {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  margin-top: 35px; }
+
+.githubSpace {
+  width: 20%;
+  height: 100%;
+  background-color: #d9523e;
+  font-size: 50px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
+  .githubSpace a {
+    color: #f2f2f2; }
+
+.descriptionInfo {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  width: 80%;
+  background-color: #f2f2f2;
+  height: 100%; }
+  .descriptionInfo a {
+    text-decoration: none; }
+  .descriptionInfo h3 {
+    margin: 0;
+    color: black;
+    width: 100%;
+    padding: 15px 0 0 10px;
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box; }
+  .descriptionInfo p {
+    font-family: "Inconsolata", monospace;
+    margin: 5px 0 0 0;
+    padding-left: 10px; }
+
+.moreProjects {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  width: 50%;
+  background-color: #f2f2f2;
+  padding-top: 70px; }
+
+.yellow {
+  background-color: #ffd180; }
+
+/* Portrait tablet and small desktops */
+@media (max-width: 1024px) {
+  .projectOne {
+    width: 85%; } }
+
+@media (max-width: 920px) {
+  .projectOne {
+    width: 90%; } }
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+  .projects {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column; }
+  .projectOne {
+    width: 70%;
+    margin-bottom: 0; }
+  .mainProject {
+    width: 100%;
+    background-color: #f2f2f2;
+    padding-top: 30px;
+    padding-bottom: 70px;
+    box-sizing: border-box; }
+  .moreProjects {
+    width: 100%;
+    background-color: #ffd180;
+    padding-top: 30px;
+    padding-bottom: 70px;
+    box-sizing: border-box; }
+  .descriptionInfo {
+    background-color: #ffd180; }
+  .yellow {
+    background-color: #f2f2f2; } }
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .projectOne {
+    width: 90%; }
+  .moreProjects {
+    padding-top: 0; } }
+
+.contact {
+  background-color: #d9523e; }
+
+.contactTitle {
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 100px;
+  padding-bottom: 50px; }
+  .contactTitle h2 {
+    font-family: "Montserrat", sans-serif;
+    width: 200px;
+    margin: 0 auto;
+    font-size: 40px;
+    letter-spacing: 5px; }
+  .contactTitle p {
+    font-family: "Inconsolata", monospace;
+    padding-left: 20px; }
+
+.contactInfo {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  width: 65%;
+  margin: 0 auto;
+  padding-bottom: 110px; }
+  .contactInfo p {
+    font-family: "Inconsolata", monospace;
+    font-size: 20px; }
+
+.address, .telephone, .email {
+  width: 33.33%;
+  box-sizing: box-border;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: end;
+      align-items: flex-end;
+  -ms-flex-pack: center;
+      justify-content: center;
+  text-align: center; }
+  .address p, .telephone p, .email p {
+    margin: 15px auto 0 auto; }
+
+.addressIcon {
+  font-size: 60px;
+  margin: 0 auto; }
+
+.phoneIcon {
+  font-size: 65px;
+  margin: 0 auto; }
+
+.emailIcon {
+  font-size: 60px;
+  margin: 0 auto; }
+
+@media (max-width: 1024px) {
+  .contactInfo {
+    width: 80%; } }
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+  .contactInfo {
+    width: 90%; } }
+
+@media (max-width: 768px) {
+  .contactInfo {
+    width: 90%; } }
+
+@media (max-width: 650px) {
+  .contactInfo {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    width: 65%;
+    margin: 0 auto;
+    padding-bottom: 110px; }
+    .contactInfo p {
+      font-family: "Inconsolata", monospace;
+      font-size: 20px; }
+  .address, .telephone, .email {
+    width: 80%;
+    margin: 0 auto 40px auto; }
+  .addressIcon {
+    font-size: 80px; }
+  .phoneIcon {
+    font-size: 85px; }
+  .emailIcon {
+    font-size: 80px; } }
+
+/* Landscape phones and down */
+footer {
+  background-color: #f2f2f2;
+  text-align: right; }
+  footer p {
+    margin: 0;
+    padding: 30px 20px 30px 0; }
