@@ -38,6 +38,10 @@ body{
 	color:$red !important;
 }
 
+a{
+	outline:none !important;
+}
+
 // H E A D E R
 
 header{
@@ -50,6 +54,7 @@ header{
 	background-color:$white;
 	position:fixed;
 	width:100%;
+	z-index:50;
 }
 
 .headerImage{
@@ -58,10 +63,8 @@ header{
 
 .logoHeader{
 	margin-left:50px;
-	background-image: url("../../assets/jlogo.png");
 	height:70px;
 	width:110px;
-	
 }
 
 nav{
@@ -79,8 +82,7 @@ nav{
 	li{
 		margin-right:50px;
 		width:25%;
-		&:hover{
-			
+		&:hover{	
 		}
 	}
 	a{
@@ -140,44 +142,51 @@ nav{
 	@include flex(row);
 	flex-wrap:wrap;
 	width:100%;
-}
-
-.squareOne, .squareTwo, .squareThree, .squareFour{
-	width:50%;
-}
-
-.squareOne, .squareTwo{
-	height:360px;
+	height:90vh;
 }
 
 .squareOne{
-	background-image:url('../../assets/faceimg.jpg');
+	width:50%;
+	height:100%;
+	background-image:url('./assets/me-edit1.jpg');
 	background-size:cover;
 	background-repeat: no-repeat;
-	background-position:center;
+	background-position:0 0;
+	position:relative;
 }
 
-.squareThree, .squareFour{
-	height:205px;
+.layover{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background-color:$gray;
+	opacity:0.10;
 }
 
-.homeMe{
-	height:280px;
-	width:430px;
+.homeTwo{
+	width:50%;
+	height:100%;
+	@include flex(column);
 }
 
 .squareTwo{
 	@include flex(column);
 	justify-content:center;
 	background-color: $lightYellow;
+	height:75%;
 }
 
 .squareThree{
 	background-color: $red;
+	display:flex;
+	align-items:center;
+	height:25%;
 }
 
 .homeName{
-	width:60%;
+	width:80%;
 	margin:0 auto;
 	h1{
 		color:$black;
@@ -186,17 +195,76 @@ nav{
 		background-color:$white;
 		margin:0;
 		box-sizing:border-box;
+		font-size:50px;
+		text-align:center;
 	}
 	h3{
 		color:$black;
 		font-family: $fontMain;
-		margin:10px 0 0 0;
+		margin:0;
+		background-color:none;
+		padding:10px 20px;
+		color:$red;
+		font-size:20px;
+		font-weight:200;
+		margin:0 auto;
 	}
 }
 
-.squareThree{
-	display:flex;
-	align-items:center;
+.shadow{
+	position:relative;
+	@include flex(row);
+	width:100%;
+}
+
+.exceptionOne{
+	position:absolute;
+	left:0;
+	float:left;
+	width: 0; 
+	height: 0; 
+	border-top: 22px solid transparent;
+	border-left: 22px solid $gray;
+	border-bottom: 22px solid $gray; 
+	border-right:22px solid transparent;
+	background-color:#cccccc;
+}
+
+.exceptionTwo{
+	position:absolute;
+	right:0;
+	width: 0; 
+	height: 0; 
+	border-top: 22px solid transparent;
+	border-left: 22px solid transparent;
+	border-bottom: 22px solid $gray; 
+	border-right:22px solid $gray;
+	background-color:#cccccc;
+}
+
+.firstTriangle {
+	position:absolute;
+	left:0;
+	float:left;
+	width: 0; 
+	height: 0; 
+	border-top: 22px solid transparent;
+	border-left: 22px solid $lightYellow;
+	border-bottom: 22px solid $lightYellow; 
+	border-right:22px solid transparent;
+	background-color:#cccccc;
+}
+
+.secondTriangle {
+	position:absolute;
+	right:0;
+	width: 0; 
+	height: 0; 
+	border-top: 22px solid transparent;
+	border-left: 22px solid transparent;
+	border-bottom: 22px solid $lightYellow; 
+	border-right:22px solid $lightYellow;
+	background-color:#cccccc;
 }
 
 .icons{
@@ -208,6 +276,7 @@ nav{
 		text-decoration:none;
 		color:$black;
 		width:25%;
+		text-align:center;
 		&:hover{
 			color:$gray;
 		}
@@ -219,26 +288,20 @@ nav{
 	text-decoration: none;
 }
 
-.squareFour{
-	@include flex(colum);
-	align-items:center;
-	justify-content:center;
-}
-
-.intro{
-	@include flex(column);
-	margin:0 auto;
-	width:60%;
-	p{
-		font-size:20px;
-		color:$black;
-		font-family: $fontMain;
-		margin:0 0 20px 0;
-	}
-}
-
 /* Portrait tablet and small desktops */
 @media (max-width: 1024px) {
+	.home{
+		height:auto;
+	}
+	
+	.squareOne, .squareTwo{
+		height:360px;
+	}
+
+	.squareThree, .squareFour{
+		height:205px;
+	}
+
 	.intro{
 		width:80%;
 	}
@@ -388,37 +451,31 @@ nav{
 	@include flex(column);
 	width:80%;
 	margin:50px auto;
-}
-
-.aboutEducation{
 	h3{
 		color:$white;
 		letter-spacing: 5px;
 		font-family: $fontTitle;
-		margin:0 0 15px 0;
+		margin:0 0 10px 0;
 	}
+}
+.aboutEducation{
+	margin-bottom:20px;
 }
 
 .eduInfo{
 	background-color: $gray;
-	padding:20px 30px;
+	padding:30px;
 	box-sizing:border-box;
 	h4{
 		margin:0;
+		font-size:18px;
+		font-family: $fontMain;
+		font-weight: bold;
 	}
 	p{
 		margin:5px 0 20px 0;
 		padding-left:20px;
 		font-family: $fontMain;
-	}
-}
-
-.skillsTitle{
-	h3{
-		color:$white;
-		letter-spacing: 5px;
-		font-family: $fontTitle;
-		margin:20px 0 15px 0;
 	}
 }
 
@@ -429,11 +486,20 @@ nav{
 .skillsInfo{
 	background-color: $gray;
 	font-family:$fontMain;
-	padding:20px 30px;
+	padding:30px;
 	font-size:20px;
 	p{
+		margin:0;
 		line-height: 30px;
 	}
+}
+
+.colorRed{
+	color:$red;
+}
+
+#foundationsphp{
+	margin-bottom:0;
 }
 
 /* Portrait tablet and small desktops */
@@ -477,6 +543,7 @@ nav{
 	width:50%;
 	background-color:$lightYellow;
 	padding-top:70px;
+	padding-bottom:50px;
 }
 
 .projectOneImage{
@@ -489,6 +556,10 @@ nav{
 	justify-content:space-between;
 	width:70%;
 	margin:100px auto 100px auto;
+}
+
+.underneath{
+	margin-top:70px auto 100px auto;
 }
 
 .imageOne{
@@ -516,7 +587,10 @@ nav{
 	justify-content:center;
 	align-items:center;
 	a{
-		color:$gray;
+		color:$black;
+		&:hover{
+			color:$gray;
+		}
 	}
 }
 
@@ -535,6 +609,10 @@ nav{
 		padding:15px 0 0 10px;
 		font-family: $fontTitle;
 		box-sizing:border-box;
+		letter-spacing: 1px;
+		&:hover{
+			color:$red;
+		}
 	}
 	p{
 		font-family: $fontMain;
@@ -548,7 +626,7 @@ nav{
 	width:50%;
 	background-color:$gray;
 	padding-top:70px;
-
+	padding-bottom:50px;
 }
 
 .yellow{
@@ -623,30 +701,40 @@ nav{
 }
 
 .contactTitle{
-	width:40%;
+	@include flex(column);
+	width:65%;
 	margin:0 auto;
 	text-align:center;
 	box-sizing:border-box;
 	padding-top:100px;
-	padding-bottom:50px;
+	padding-bottom:30px;
 	h2{
+		width:100%;
 		font-family: $fontTitle;
-		width:200px;
-		margin:0 auto;
+		margin:0;
 		font-size: 40px;
 		letter-spacing: 5px;
+		color:$black;
+		background-color:white;
+		padding:15px 0;
 	}
-	p{
-		font-family: $fontMain;
-		padding-left:20px;
-	}
+}
+
+#changeColourOne{
+	border-left: 22px solid $red;
+	border-bottom: 22px solid $red; 
+}
+
+#changeColourTwo{
+	border-right: 22px solid $red;
+	border-bottom: 22px solid $red; 
 }
 
 .contactInfo{
 	@include flex(row);
 	width:65%;
 	margin:0 auto;
-	padding-bottom:110px;
+	padding-bottom:70px;
 	p{
 		font-family: $fontMain;
 		font-size:20px;
@@ -662,25 +750,59 @@ nav{
 	text-align:center;
 	p{
 		margin:15px auto 0 auto;
+		color:$black;
 	}
 }
 
 .addressIcon{
 	font-size:60px;
 	margin:0 auto;
+	color:$lightYellow;
 }
 
 .phoneIcon{
 	font-size:65px;
 	margin:0 auto;
+	color:$lightYellow;
 }
 
 .emailIcon{
 	font-size:60px;
 	margin:0 auto;
+	text-decoration:none;
+	color:$lightYellow;
+}
+
+.socialMedia{
+	background-color: $red;
+	display:flex;
+	align-items:center;
+	width:40%;
+	margin:0 auto;
+	padding-bottom:70px;
+	a{
+		text-decoration:none;
+		color:$black;
+		width:33.33%;
+		text-align:center;
+		&:hover{
+			color:$lightYellow;
+		}
+	}
+}
+
+.socialContact{
+	font-size:40px;
+	text-decoration: none;
 }
 
 @media (max-width: 1024px) {
+	.contactTitle{
+		width:80%;
+		h2{
+			width:100%;
+		}
+	}
 	.contactInfo{
 		width:80%;
 	}
@@ -700,6 +822,12 @@ nav{
 }
 
 @media (max-width: 650px) {
+	.contactTitle{
+		width:80%;
+		h2{
+			width:100%;
+		}
+	}
 	.contactInfo{
 		@include flex(column);
 		width:65%;
@@ -717,15 +845,15 @@ nav{
 	}
 
 	.addressIcon{
-		font-size:80px;
+		font-size:50px;
 	}
 
 	.phoneIcon{
-		font-size:85px;
+		font-size:55px;
 	}
 
 	.emailIcon{
-		font-size:80px;
+		font-size:50px;
 	}
 }
 
@@ -742,5 +870,6 @@ footer{
 	p{
 		margin:0;
 		padding:30px 20px 30px 0;
+		color:$red;
 	}
 }

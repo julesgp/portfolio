@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Jules Garcia</title>
-	<link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Montserrat" rel="stylesheet">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="./public/style.css" rel="stylesheet"/>
@@ -12,7 +12,7 @@
 	<header id="home">
 		<div class="fixedHeader">
 			<div class="headerImage">
-				<img src="./assets/jlogo.png" class="logoHeader"> <!-- logo-->
+				<a href="#home"><img src="./public/assets/jlogo.png" class="logoHeader"></a> <!-- logo-->
 			</div>
 
 			<nav>
@@ -20,41 +20,41 @@
 					<li id ="contactButton"><a href="#contact">Contact</a></li>
 					<li id="workButton"><a href="#work">Work</a></li>
 					<li id="aboutButton"><a href="#about">About</a></li>
-					<li id="homeButton"><a href="#home" class="active">Home</a></li>
+					<li id="homeButton"><a href="#home">Home</a></li>
 				</ul>
 			</nav>
-		</div>	
+		</div>
 	</header>
 
 	<section class="home"> <!-- Home -->
 		
 		<div class="squareOne">
-			<!-- <img src="assets/face.jpg" class="homeMe"> -->
+			<div class="layover"></div>
 		</div>
 
-		<div class="squareTwo">
-			<div class="homeName">
-				<h1>JULES GARCIA</h1>
-				<h3>#webdeveloper #creative #friendly</h3>
+		<div class="homeTwo">
+			
+			<div class="squareTwo">
+				<div class="homeName">
+					<h1>JULES GARCIA</h1>
+					<div class="shadow clearfix">
+						<div class="firstTriangle"></div>
+						<h3>#webdeveloper #creative #friendly</h3>
+						<div class="secondTriangle"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="squareThree">
+				<div class="icons">
+					<a href="https://www.github.com/julesgp"><i class="fa fa-github homeIcon" aria-hidden="true"></i></a>
+					<a href="https://www.twitter.com/Jules_gp"><i class="fa fa-twitter homeIcon" aria-hidden="true"></i></a>
+					<a href="https://www.linkedin.com/in/julian-garcia-perdomo-9a6378b1/"><i class="fa fa-linkedin homeIcon" aria-hidden="true"></i></a>
+					<a href="mailto:jugar28@gmail.com"><i class="fa fa-envelope homeIcon" aria-hidden="true"></i></a>	
+				</div>		
 			</div>
 		</div>
 
-		<div class="squareThree">
-			<div class="icons">
-				<a href="#"><i class="fa fa-github homeIcon" aria-hidden="true"></i></a>
-				<a href="#"><i class="fa fa-twitter homeIcon" aria-hidden="true"></i></a>
-				<a href="#"><i class="fa fa-linkedin homeIcon" aria-hidden="true"></i></a>
-				<a href="mailto:jugar28@gmail.com"><i class="fa fa-envelope homeIcon" aria-hidden="true"></i>	</a>	
-			</div>		
-		</div>
-		
-		<div class="squareFour">
-			<div class="intro">
-				<p>Hi, welcome to my website!</p>
-				<p>Find more information about me,</p>
-				<p>and my work below.</p>
-			</div>
-		</div>
 	</section> <!-- End of Home -->
 	<span id="about"></span>
 	<section class="about"> <!-- about -->
@@ -74,12 +74,12 @@
 						<h3>EDUCATION</h3>
 					</div>
 					<div class="eduInfo">
-						<h4>@UniversityofToronto</h4>
-						<p>#politicalScience #german #envStudies #compSci</p>
 						<h4 id ="hackerYou">@HackerYou</h4>
 						<p>#webdevelopmentBootcamp</p>
+						<h4>@UniversityofToronto</h4>
+						<p>#politicalScience #german #envStudies #compSci</p>
 						<h4>@GeorgeBrownCollege</h4>
-						<p>#foundationsPHP</p>
+						<p id="foundationsphp">#foundationsPHP</p>
 					</div>
 				</div>
 				<div class="aboutSkills">
@@ -87,8 +87,8 @@
 						<h3>SKILLS / TOOLS</h3>
 					</div>
 					<div class="skillsInfo">
-						<p>#Javascript #ES6 #jquery #CSS #PHP #python #bootstrap #Sass #responsiveDesign
-						 #HTML5 #git #gulp #terminal #sublimeText #Atom #firebase #APIs #react</p>
+						<p><span class="colorRed">#Javascript</span> #ES6 #jquery #CSS <span class="colorRed">#PHP #python</span> #bootstrap <span class="colorRed">#Sass</span> #responsiveDesign
+						 #HTML5 #git #gulp #terminal #sublimeText #Atom #firebase #APIs <span class="colorRed">#react</span></p>
 					</div>
 					
 				</div>
@@ -102,35 +102,43 @@
 		<div class="mainProject">
 			<div class="projectOne">
 				<div class="projectOneImage">
-					<img src="assets/clicktail.png" class="imageOne">
+					<img src="./public/assets/clicktail.png" class="imageOne">
 				</div>
 
 				<div class="projectDescription">
 					<div class="githubSpace">
-						<a href="#"><i class="fa fa-github iconProject" aria-hidden="true"></i></a>
+						<a href="https://github.com/julesgp/click_Tail"><i class="fa fa-github iconProject" aria-hidden="true"></i></a>
 					</div>
 
 					<div class="descriptionInfo">
-						<a href="www.julescode.com/clicktail"><h3>Clicktail</h3></a>
-						<p>#javascript #APIyummly #flexbox #jquery</p>
+						<a href="http://www.julescode.com/clicktail"><h3>Clicktail</h3></a>
+						<p> #yummlyAPI #flexbox <span class="colorRed">#javascript</span></p>
 					</div>
+				</div>
+				<div class="shadow clearfix">
+					<div class="firstTriangle"></div>
+					<div class="secondTriangle"></div>
 				</div>
 			</div> <!-- End of ProjectOne -->
 
-			<div class="projectOne">
+			<div class="projectOne underneath">
 				<div class="projectOneImage">
-					<img src="assets/clicktail.png" class="imageOne">
+					<img src="./public/assets/zomatopic.png" class="imageOne">
 				</div>
 
 				<div class="projectDescription">
 					<div class="githubSpace">
-						<a href="#"><i class="fa fa-github iconProject" aria-hidden="true"></i></a>
+						<a href="https://github.com/julesgp/zomatoproject"><i class="fa fa-github iconProject" aria-hidden="true"></i></a>
 					</div>
 
 					<div class="descriptionInfo">
-						<a href="www.julescode.com/clicktail"><h3>Clicktail</h3></a>
-						<p>#javascript #APIyummly #flexbox #jquery</p>
+						<a href="http://www.julescode.com/zomatosauce"><h3>Zomato Sauce</h3></a>
+						<p>#javascript <span class="colorRed">#googleMapsAPI</span> #jquery</p>
 					</div>
+				</div>
+				<div class="shadow clearfix">
+					<div class="firstTriangle"></div>
+					<div class="secondTriangle"></div>
 				</div>
 			</div> <!-- End of ProjectOne -->
 		</div> <!-- End of MainProject -->
@@ -138,35 +146,43 @@
 		<div class="moreProjects">
 			<div class="projectOne">
 				<div class="projectOneImage">
-					<img src="assets/passaimg.png" class="imageOne">
+					<img src="./public/assets/passaimg.png" class="imageOne">
 				</div>
 
 				<div class="projectDescription">
 					<div class="githubSpace">
-						<a href="#"><i class="fa fa-github iconProject" aria-hidden="true"></i></a>
+						<a href="https://github.com/julesgp/PassaheroApp"><i class="fa fa-github iconProject" aria-hidden="true"></i></a>
 					</div>
 
 					<div class="descriptionInfo yellow">
-						<a href="www.julescode.com/clicktail"><h3>Passahero</h3></a>
-						<p>#javascript #APIyummly #flexbox #jquery</p>
+						<a href="https://passahero.firebaseapp.com/"><h3>Passahero</h3></a>
+						<p> #APIs #responsive <span class="colorRed">#react</span> #animation</p>
 					</div>
+				</div>
+				<div class="shadow clearfix">
+					<div class="exceptionOne"></div>
+					<div class="exceptionTwo"></div>
 				</div>
 			</div> <!-- End of ProjectOne -->
 
-			<div class="projectOne">
+			<div class="projectOne underneath">
 				<div class="projectOneImage">
-					<img src="assets/bakery.png" class="imageOne">
+					<img src="./public/assets/bakery.png" class="imageOne">
 				</div>
 
 				<div class="projectDescription">
 					<div class="githubSpace">
-						<a href="#"><i class="fa fa-github iconProject" aria-hidden="true"></i></a>
+						<a href="https://github.com/julesgp/Bakery"><i class="fa fa-github iconProject" aria-hidden="true"></i></a>
 					</div>
 
 					<div class="descriptionInfo yellow">
-						<a href="www.julescode.com/clicktail"><h3>Clicktail</h3></a>
-						<p>#javascript #APIyummly #flexbox #jquery</p>
+						<a href="http://www.julescode.com/bakery"><h3>Baker and Coffee</h3></a>
+						<p> #HTML <span class="colorRed">#sass</span> #mediaqueries</p>
 					</div>
+				</div>
+				<div class="shadow clearfix">
+					<div class="exceptionOne"></div>
+					<div class="exceptionTwo"></div>
 				</div>
 			</div> <!-- End of ProjectOne -->
 		</div> <!-- End of MoreProjects-->
@@ -175,27 +191,38 @@
 	<section class="contact" id="contact"> <!-- contact -->
 		<div class="contactTitle">
 			<h2>CONTACT</h2>
-			<p>Let's get this started!</p>
+			<div class="shadow clearfix">
+				<div class="exceptionOne" id="changeColourOne"></div>
+				<div class="exceptionTwo" id="changeColourTwo"></div>
+			</div>
 		</div>
 
 		<div class="contactInfo">
 			<div class="address">
 				<i class="fa fa-map addressIcon" aria-hidden="true"></i>
-				<p>Toronto, ON, Canada</p>
+				<p>Toronto, Canada</p>
 				
 			</div>
 
 			<div class="telephone">
 				<i class="fa fa-mobile phoneIcon" aria-hidden="true"></i>
-				<p>Cell: 647-828-1935</p>
+				<p> +1(647)-828-1935</p>
 				
 			</div>
 
 			<div class="email">
-				<i class="fa fa-envelope emailIcon" aria-hidden="true"></i>
-				<p>jugar28@gmail.com</p>
+				<a href="mailto:jugar28@gmail.com" class="emailIcon"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+				<p>info@julescode.com</p>
 				
 			</div>
+		</div>
+
+		<div class="socialMedia">
+			<div class="icons">
+				<a href="https://www.github.com/julesgp"><i class="fa fa-github socialContact" aria-hidden="true"></i></a>
+				<a href="https://www.twitter.com/Jules_gp"><i class="fa fa-twitter socialContact" aria-hidden="true"></i></a>
+				<a href="https://www.linkedin.com/in/julian-garcia-perdomo-9a6378b1/"><i class="fa fa-linkedin socialContact" aria-hidden="true"></i></a>	
+			</div>		
 		</div>	
 	</section>
 	
